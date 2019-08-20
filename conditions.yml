@@ -1,0 +1,19 @@
+parameters:
+ category:
+    - child
+    - adult
+ age:
+    - 10
+    - 20
+    - 60
+    - 80
+
+invalid:
+ - category: adult
+   age:
+     - 10
+     - 20
+ - category: child
+   age:
+     - 60
+     - 80
