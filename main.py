@@ -8,17 +8,19 @@ count = 0
 
 
 while count == 0:
-    # get User input from console
-    # print('Enter a Input file Name:')
-    # inputFileName = input()
-    # inputFileName = inputFileName + ".yml"
-    # print('Enter a Output file Name:')
-    # outputFileName = input()
-    # outputFileName = outputFileName + ".csv"
+    try:
+        # get input from arguments passed
+        inputFileName = sys.argv[1]
+        outputFileName = sys.argv[2]
+    except:
+        # get User input from console
+        print('Enter a Input file Name:')
+        inputFileName = input()
+        inputFileName = inputFileName + ".yml"
+        print('Enter a Output file Name:')
+        outputFileName = input()
+        outputFileName = outputFileName + ".csv"
 
-    # get input from arguments passed
-    inputFileName = sys.argv[1]
-    outputFileName = sys.argv[2]
 
     # adding file extensions as the input file can only be yml and output be csv
     inputFileName = inputFileName + ".yml"
