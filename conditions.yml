@@ -17,6 +17,8 @@ invalid:
    age:
      - 60
      - 80
+   gender:
+     - female
 
  - category: adult
    age:
