@@ -2,8 +2,28 @@ import yaml
 import itertools
 import csv
 
-with open("conditions.yml", 'r') as stream:
-    conditions = yaml.safe_load(stream)
+count = 0
+
+while count == 0:
+    print('Enter a Input file Name:')
+    inputFileName = input()
+    inputFileName = inputFileName + ".yml"
+    print('Enter a Output file Name:')
+    outputFileName = input()
+    outputFileName = outputFileName + ".csv"
+
+    print("Your Input File Name is: ", inputFileName)
+    print("Your Output File Name is: ", outputFileName)
+
+    try:
+        with open(inputFileName, 'r') as stream:
+            conditions = yaml.safe_load(stream)
+        count = 1
+    except:
+        print("File Name ", inputFileName,
+              " deos not exist. Please create such file or check the extention and try again.")
+        count = 0
+
 
 parameters = conditions['parameters']
 invalid = list(conditions['invalid'])
@@ -73,7 +93,7 @@ for e in range(len(allCombinations)):
 output = []
 i = 0
 k = 0
-with open('conditions.csv', 'w', newline='\n') as myfile:
+with open(outputFileName, 'w', newline='\n') as myfile:
     wr = csv.writer(myfile, quoting=csv.QUOTE_ALL)
     wr.writerow(paramNames)
     for i in finalList:
@@ -87,4 +107,4 @@ with open('conditions.csv', 'w', newline='\n') as myfile:
 
             wr.writerow(outputList)
         output.clear()
-    print("Data Written conditions.csv")
+    print("Data Written to ", outputFileName)
