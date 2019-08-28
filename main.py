@@ -6,7 +6,6 @@ import csv
 
 count = 0
 
-
 while count == 0:
     try:
         # get input from arguments passed
@@ -16,20 +15,16 @@ while count == 0:
         # get User input from console
         print('Enter a Input file Name:')
         inputFileName = input()
-        inputFileName = inputFileName + ".yml"
         print('Enter a Output file Name:')
         outputFileName = input()
-        outputFileName = outputFileName + ".csv"
-
 
     # adding file extensions as the input file can only be yml and output be csv
+    print(inputFileName)
     inputFileName = inputFileName + ".yml"
     outputFileName = outputFileName + ".csv"
 
     print("Your Input File Name is: ", inputFileName)
     print("Your Output File Name is: ", outputFileName)
-
-
 
     try:
         # getting data from input file to pyyaml format for parsing
@@ -39,9 +34,7 @@ while count == 0:
     except:
         print("File Name ", inputFileName,
               " deos not exist. Please create such file or enter the file name properly and try again.")
-        count = 0
         sys.exit()
-
 
 # diving the all input conditions to separate lists
 parameters = conditions['parameters']
@@ -57,6 +50,8 @@ for k, v in parameters.items():
     firstParameter = v
     break
 
+print(firstParameter)
+print(paramNames)
 allCombinations = []
 iterationsOfParameters = len(paramNames) - 1
 
@@ -89,6 +84,10 @@ list = []
 
 e = 0
 f = 1
+
+print(allCombinations)
+print(invalidCombinations)
+
 
 # function to compare two lists and remove the similar ones
 def diff(first, second):

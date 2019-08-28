@@ -1,0 +1,17 @@
+- Refactor all variable name to have meaning full names. 
+
+- Better not to add extension to input file. We might ask user to provide an input file name (with the extension) 
+- Read file content should be a function which reads the file based on the extension
+- This function will provide error when the input is not .yml
+
+later if we have more input types this function will be the one who get changes
+
+# getting Names of Parameters
+- We can do this in a single loop since we can access key and value, key will be the condition name. So you will be able to populate 'paramNames' from the key.
+
+- You can have 2 main arrays, 1 for first condition / other one for the rest of the conditions
+-- with this method you don't need to keep seperate length counts for loops, you can just loop for the 1st and 2nd array counts
+
+-- generate the final data set (including exclusions) using a function
+
+-- output generation should also be a function

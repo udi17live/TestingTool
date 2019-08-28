@@ -1,0 +1,39 @@
+{
+  "parameters": {
+    "category": [
+      "child",
+      "adult"
+    ],
+    "age": [
+      10,
+      15,
+      20,
+      60,
+      80
+    ],
+    "gender": [
+      "male",
+      "female"
+    ]
+  },
+  "invalid": [
+    {
+      "category": "child",
+      "age": [
+        60,
+        80
+      ],
+      "gender": [
+        "female"
+      ]
+    },
+    {
+      "category": "adult",
+      "age": [
+        10,
+        20,
+        15
+      ]
+    }
+  ]
+}
